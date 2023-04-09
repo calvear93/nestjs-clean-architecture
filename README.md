@@ -21,7 +21,7 @@
 │   ├── __tests__/ # e2e tests and utilities
 │   ├── application/ # use cases
 │   ├── domain/ # core bussiness
-│   ├── infrastructure/ # frameworks and services
+│   ├── infrastructure/ # frameworks, service and adapters
 │   ├── app.module.ts
 │   └── main.ts # entrypoint
 ├── tsconfig.json
