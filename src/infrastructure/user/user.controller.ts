@@ -12,12 +12,12 @@ import {
 	Patch,
 	Post,
 } from '@nestjs/common';
+import { UserDto } from './dto/user.dto.js';
+import { UserUpdateDto } from './dto/user-update.js';
+import { UserCreateDto } from './dto/user-create.js';
 import { ParseOptionalIntPipe } from '../transformers/parse-optional-int.pipe.js';
 import type { UserId } from '../../domain/user/user.entity.js';
 import { UserUseCase } from '../../application/user/user.use-case.js';
-import { UserDto } from '../../application/user/dto/user.dto.js';
-import { UserUpdateDto } from '../../application/user/dto/user-update.js';
-import { UserCreateDto } from '../../application/user/dto/user-create.js';
 
 @Controller({
 	path: 'user',
@@ -37,7 +37,7 @@ export class UserController {
 	}
 
 	@Post()
-	@ApiBody({ type: UserCreateDto })
+	@ApiBody({ schema: UserCreateDto.jsonSchema })
 	@HttpCode(HttpStatus.CREATED)
 	create(@Body() user: UserCreateDto): Promise<UserId> {
 		this._logger.verbose(`creating user ${user.email}`);
@@ -47,7 +47,7 @@ export class UserController {
 
 	@Patch(':id')
 	@ApiParam({ name: 'id' })
-	@ApiBody({ type: UserUpdateDto })
+	@ApiBody({ schema: UserUpdateDto.jsonSchema })
 	update(
 		@Param('id', ParseIntPipe) id: UserId,
 		@Body() user: UserUpdateDto,

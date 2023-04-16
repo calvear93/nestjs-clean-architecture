@@ -1,9 +1,9 @@
 import { PrismaClient } from '@prisma/client';
 import { Injectable, Provider } from '@nestjs/common';
 import { userRolesMapper } from './mappers/user-upsert-roles.mapper.js';
+import { UserDto } from './dto/user.dto.js';
+import { UserCreateDto } from './dto/user-create.js';
 import { UserId } from '../../domain/user/user.entity.js';
-import { UserDto } from '../../application/user/dto/user.dto.js';
-import { UserCreateDto } from '../../application/user/dto/user-create.js';
 import { UserRepository } from '../../application/user/contracts/user.repository.contract.js';
 
 @Injectable()

@@ -1,4 +1,3 @@
-import { createZodDto } from '@anatine/zod-nestjs';
 import { RolSchema } from '../../../domain/rol/rol.entity.js';
 
 export const RolDtoSchema = RolSchema.omit({
@@ -9,5 +8,3 @@ export const RolDtoSchema = RolSchema.omit({
 	descriptor: true,
 	type: true,
 });
-
-export class RolDto extends createZodDto(RolDtoSchema) {}

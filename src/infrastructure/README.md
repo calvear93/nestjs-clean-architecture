@@ -1,4 +1,4 @@
-## Infrastructure/Adapters Layer (Enterprise Bussiness Rules)
+## Infrastructure/Adapters Layer (Drivers, Providers, Config)
 
 Bridge with frameworks, persistence, external services,
 HTTP controllers, queue or event messages, etc.

@@ -73,19 +73,6 @@
 			}
 		],
 		"array-callback-return": "error",
-		"capitalized-comments": [
-			"warn",
-			"never",
-			{
-				"block": {
-					"ignorePattern": ".*"
-				},
-				"line": {
-					"ignoreConsecutiveComments": true,
-					"ignorePattern": "[A-Z]*:.*"
-				}
-			}
-		],
 		"complexity": ["warn", 15],
 		"default-case": "warn",
 		"default-case-last": "warn",

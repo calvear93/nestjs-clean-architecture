@@ -1,6 +1,6 @@
-import { UserDto } from '../dto/user.dto.js';
-import { UserUpdateDto } from '../dto/user-update.js';
-import { UserCreateDto } from '../dto/user-create.js';
+import { UserDto } from '../schemas/user.schema.js';
+import { UserUpdateDto } from '../schemas/user-update.schema.js';
+import { UserCreateDto } from '../schemas/user-create.schema.js';
 import { UserId } from '../../../domain/user/user.entity.js';
 
 export abstract class UserRepository {

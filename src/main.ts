@@ -1,7 +1,8 @@
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { FastifyAdapter } from '@nestjs/platform-fastify';
 import { NestFactory } from '@nestjs/core';
-import { ZodValidationPipe } from '@anatine/zod-nestjs';
+import { ZodValidationPipe } from './infrastructure/zod/zod.pipe.js';
+import { registerDtoSchemas } from './infrastructure/zod/create-zod-dto.js';
 import { env } from './env.config.js';
 import { AppModule } from './app.module.js';
 
@@ -20,7 +21,7 @@ const document = SwaggerModule.createDocument(
 	app,
 	new DocumentBuilder().setTitle(env.APP.TITLE).build(),
 );
-SwaggerModule.setup(env.APP.API_PREFIX, app, document);
+SwaggerModule.setup(env.APP.API_PREFIX, app, registerDtoSchemas(document));
 
 // server starts
 await app.listen(env.APP.PORT, () =>

@@ -3,9 +3,9 @@ import { afterAll, beforeAll, describe, expect, test } from 'vitest';
 import { TestingModule } from '@nestjs/testing';
 import { NestFastifyApplication } from '@nestjs/platform-fastify';
 import { HttpStatus } from '@nestjs/common';
-import { createFastifyTestingModule } from './utils/test-module.util.js';
+import { createFastifyTestingModule } from './utils/fastify-test-module.js';
+import { UserCreateDto } from '../infrastructure/user/dto/user-create.js';
 import { User } from '../domain/user/user.entity.js';
-import { UserCreateDto } from '../application/user/dto/user-create.js';
 import { AppModule } from '../app.module.js';
 
 describe('Sample', () => {
